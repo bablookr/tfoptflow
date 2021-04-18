@@ -11,16 +11,13 @@ Licensed under the MIT License (see LICENSE for details)
 from __future__ import absolute_import, division, print_function
 import sys
 from copy import deepcopy
-from dataset_base import _DEFAULT_DS_TEST_OPTIONS
-from dataset_mpisintel import MPISintelDataset
-from model_pwcnet import ModelPWCNet, _DEFAULT_PWCNET_TEST_OPTIONS
-from visualize import display_img_pairs_w_flows
+from .dataset_base import _DEFAULT_DS_TEST_OPTIONS
+from .dataset_mpisintel import MPISintelDataset
+from .model_pwcnet import ModelPWCNet, _DEFAULT_PWCNET_TEST_OPTIONS
+from .visualize import display_img_pairs_w_flows
 
 # TODO: You MUST set _DATASET_ROOT to the correct path on your machine!
-if sys.platform.startswith("win"):
-    _DATASET_ROOT = 'E:/datasets/'
-else:
-    _DATASET_ROOT = '/media/EDrive/datasets/'
+_DATASET_ROOT = 'C:\\Users\\bakumar\\data\\'
 _MPISINTEL_ROOT = _DATASET_ROOT + 'MPI-Sintel'
 
 # TODO: Set device to use for inference

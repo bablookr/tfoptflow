@@ -56,7 +56,7 @@ def pwcnet_loss(y, y_hat_pyr, opts):
             _, lvl_height, lvl_width, _ = tf.unstack(tf.shape(y_hat_pyr[lvl]))
 
             # Scale the full-size groundtruth to the correct lower res level
-            scaled_flow_gt = tf.image.resize_bilinear(y, (lvl_height, lvl_width))
+            scaled_flow_gt = tf.compat.v1.image.resize_bilinear(y, (lvl_height, lvl_width))
             scaled_flow_gt /= tf.cast(gt_height / lvl_height, dtype=tf.float32)
 
             # Compute the norm of the difference between scaled groundtruth and prediction
